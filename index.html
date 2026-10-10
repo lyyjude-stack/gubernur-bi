@@ -352,7 +352,7 @@ shareCard().then(function(blob){if(!blob)throw new Error('nb');var f=null;try{f=
 if(f&&navigator.canShare&&navigator.canShare({files:[f]})&&navigator.share){return navigator.share({files:[f],text:txt+' '+SITE}).catch(function(e){if(e&&e.name==='AbortError')return;throw e})}
 var u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='skor-gubernur-bi.png';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000)
 }).catch(function(){}).then(function(){btn.disabled=false;btn.textContent=old})}
-function ending(){if(st.okI>=9&&st.okG>=7&&st.okR>=7)return 'legend';if(st.big>=3)return 'panic';if(st.okI>=8)return 'infl';if(st.okG>=8)return 'growth';return 'steady'}
+function ending(){if(st.okI>=11&&st.okG>=10&&st.okR>=10)return 'legend';if(st.big>=3)return 'panic';if(st.okI>=8)return 'infl';if(st.okG>=8)return 'growth';return 'steady'}
 function step(){if(st.over)return;var r=st.sl,e=E[st.t],ef={},n=st.h.length,pr=st.rate,prp=st.rp,wasOk=st.infl>=2.5&&st.infl<=4.5,ps=st.s.slice();
 st.pv={infl:st.infl,rp:st.rp,gr:st.gr,us:st.us,R:st.R};
 if(e){var mg=1.6*(0.7+Math.random()*0.8);for(var kk in EF[e])ef[kk]=EF[e][kk]*mg}
